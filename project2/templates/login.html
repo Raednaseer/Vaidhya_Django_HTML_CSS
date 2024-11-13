@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% block title %}Login{% endblock %}
+{% block content %}
+    <h1 style="text-align: center;">LogIn</h1>
+    <style>
+        form {
+            display: flex;
+            flex-direction: column; 
+            width: 300px;
+            margin: auto; 
+        }
+
+        label {
+            margin-bottom: 5px; 
+        }
+
+        input {
+            margin-bottom: 15px;
+            padding: 8px; 
+            border: 1px solid #ccc; 
+            border-radius: 4px; 
+        }
+    </style>
+    <div class="row justify-content-center">
+        <form id="loginForm" onsubmit="handleLogin(event)">
+            <!--<label for="name">Full Name</label>
+            <input type="text" name="name" id="name" required minlength="5" maxlength="25" pattern="[A-Za-z\s]+" title="Please enter a valid name">-->
+            
+            <label for="email">Email Address</label>
+            <input type="email" name="email" id="email" required>
+            
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" required minlength="8">
+            
+            <button type="submit" id="submit" class="btn custom-btn">Login</button>
+            <br>
+            <a href="{% url 'signup' %}" style="text-align: center; color: #393C2D;" >New User? Click to create your account.</a>
+        </form>
+        {% if messages %}
+            <div class="alert alert-danger" style="text-align: center;">
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+
+    <!--<button type="submit" style="border-color: brown; border-radius: 2px;" class="btn custom-btn" id="submit1">Click Me</button>-->
+
+    <script>
+        const getData = async() =>{
+            let y = await "Hello world!"
+            console.log(y)
+        }
+        console.log(1)
+        console.log(2)
+        getData()
+        console.log(3)
+        console.log(4)
+        console.log(5)
+        console.log(6)
+        console.log(7)
+        console.log(8)
+        console.log(9)
+        console.log(10)
+        function handleLogin(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const actual_email = 'raed@abc.com';
+    const actual_password = 'rootroot';
+
+    if (email === actual_email) {
+        if (password === actual_password) {
+            // Redirect to home URL
+            window.location.href = "{% url 'home' %}"
+        } else {
+            alert("Wrong Password");
+        }
+    } else {
+        alert("Email Address not registered");
+    }
+}
+    </script>
+{% endblock %}

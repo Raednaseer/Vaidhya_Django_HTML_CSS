@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+{% block title %}Products{% endblock %}
+{% load static %}
+
+{% block content %}
+    <h1>Our Products</h1>
+    <p>Choose from our diverse range of Ayurvedic offerings:</p>
+
+    <div class="container mt-5">
+        <h2 id="supplements">Herbal Supplements</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="{% static 'images/products-ashwa.jpg' %}" class="card-img-top" alt="Herbal Supplement 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Ashwagandha</h5>
+                        <p class="card-text">From Rs. 499</p>
+                        <p class="card-text">An adaptogen that helps the body manage stress and anxiety. Supports energy, stamina, and mental clarity, while balancing stress.</p>
+                        <a href="#" class="btn custom-btn">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="{% static 'images/products-brahmi.jpg' %}" class="card-img-top" alt="Herbal Supplement 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Brahmi</h5>
+                        <p class="card-text">From Rs. 399</p>
+                        <p class="card-text">Enhances cognitive function and memory. Known for its calming properties, it supports mental clarity and reduces stress.</p>
+                        <a href="#" class="btn custom-btn">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="{% static 'images/products-amla.jpg' %}" class="card-img-top" alt="Herbal Supplement 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Amla</h5>
+                        <p class="card-text">From Rs. 499</p>
+                        <p class="card-text">Rich in vitamin C and antioxidants, Amla supports immune health, promotes radiant skin, and aids digestion</p>
+                        <a href="#" class="btn custom-btn">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 id="oil">Essential Oils</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="{% static 'images/products-bodyoil.jpg' %}" class="card-img-top" alt="Essential Oil 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Muscle Massage Oil</h5>
+                        <p class="card-text">From Rs. 599</p>
+                        <p class="card-text">Formulated with a blend of herbal extracts and oils such as Mahanarayan oil and Sesame oil, this massage oil soothes sore muscles and relieves tension. Rich in anti-inflammatory properties.</p>
+                        <a href="" class="btn custom-btn">Add to cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="{% static 'images/products-neemoil.jpg' %}" class="card-img-top" alt="Essential Oil 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Pure Neem Oil</h5>
+                        <p class="card-text">From Rs. 699</p>
+                        <p class="card-text">Extracted from the seeds of the neem tree, this oil has strong antibacterial and anti-inflammatory properties. It’s commonly used for skin care, helping to treat acne, rashes, and other skin conditions.</p>
+                        <a href="#" class="btn custom-btn">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="{% static 'images/products-hairoil.jpg' %}" class="card-img-top" alt="Essential Oil 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Hair Oil</h5>
+                        <p class="card-text">From Rs. 599</p>
+                        <p class="card-text"> blend of nourishing herbs and oils designed to promote healthy hair growth and scalp health. Typically enriched with ingredients like Brahmi, Amla, and Bhringraj, it strengthens hair, reduces dandruff, and enhances shine</p>
+                        <a href="#" class="btn custom-btn">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 id="skincare">Skincare Products</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="{% static 'images/products-moist.jpg' %}" class="card-img-top" alt="Skincare Product 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Herbal Moisturizer</h5>
+                        <p class="card-text">From Rs.</p>
+                        <p class="card-text">A lightweight cream infused with natural oils like Jojoba and Almond, along with soothing herbs such as Chamomile. It hydrates and nourishes the skin, providing a protective barrier while promoting a soft, radiant complexion. Rich in antioxidants, it helps combat environmental stressors while promoting elasticity and a radiant complexion.</p>
+                        <a href="#" class="btn custom-btn">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="{% static 'images/products-facewash.jpg' %}" class="card-img-top" alt="Skincare Product 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Herbal Face Wash</h5>
+                        <p class="card-text">From Rs.</p>
+                        <p class="card-text">A gentle cleanser formulated with natural ingredients like Aloe Vera, Neem, and Turmeric. It removes impurities and excess oil while maintaining the skin's moisture balance. Suitable for all skin types, it refreshes and rejuvenates the complexion, promoting a healthy glow.</p>
+                        <a href="#" class="btn custom-btn">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="{% static 'images/products-soap.jpg' %}" class="card-img-top" alt="Skincare Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Herbal Soap</h5>
+                        <p class="card-text">From Rs. 99</p>
+                        <p class="card-text">A handcrafted soap made from natural oils and botanical extracts. Infused with nourishing ingredients like Coconut oil and Lavender, it cleanses without stripping moisture. Gentle on the skin, it promotes hydration and leaves a subtle, refreshing fragrance after each wash.</p>
+                        <a href="#" class="btn custom-btn">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 id="tea">Teas and Infusions</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="{% static 'images/products-tulsi.jpg' %}" class="card-img-top" alt="Tea Infusion 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Tulsi Tea</h5>
+                        <p class="card-text">From Rs.</p>
+                        <p class="card-text">Made from holy basil leaves, Tulsi tea is known for its stress-relieving and immune-boosting properties. It aids digestion and supports respiratory health, providing a soothing and aromatic experience that promotes overall well-being.</p>
+                        <a href="#" class="btn custom-btn">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="{% static 'images/products-turmeric.jpg' %}" class="card-img-top" alt="Tea Infusion 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Ginger & Turmeric Infusion</h5>
+                        <p class="card-text">From Rs.</p>
+                        <p class="card-text">This warming infusion combines ginger and turmeric, both renowned for their anti-inflammatory benefits. It supports digestion, boosts immunity, and enhances circulation, making it a comforting drink that helps relieve cold symptoms and promotes vitality.</p>
+                        <a href="#" class="btn custom-btn">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="{% static 'images/products-lemon.jpg' %}" class="card-img-top" alt="Tea Infusion 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Mint and Lemon Balm Tea</h5>
+                        <p class="card-text">From Rs.</p>
+                        <p class="card-text">A refreshing blend of mint and lemon balm, this tea is perfect for calming the mind and soothing the digestive system. It helps alleviate stress, promotes relaxation, and provides a gentle energy boost, making it an excellent choice for any time of day.</p>
+                        <a href="#" class="btn custom-btn">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

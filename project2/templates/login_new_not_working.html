@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}Login{% endblock %}
+{% block content %}
+    <h1 style="text-align: center;">Log In</h1>
+    <style>
+        form {
+            display: flex;
+            flex-direction: column; 
+            width: 300px;
+            margin: auto; 
+        }
+
+        label {
+            margin-bottom: 5px; 
+        }
+
+        input {
+            margin-bottom: 15px;
+            padding: 8px; 
+            border: 1px solid #ccc; 
+            border-radius: 4px; 
+        }
+    </style>
+    <div class="row justify-content-center">
+        <form action="{% url 'login' %}" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}  <!-- Render the form fields -->
+            <button type="submit" class="btn custom-btn">Login</button>
+            <br>
+            <a href="{% url 'signup' %}" style="text-align: center; color: #393C2D;">New User? Click to create your account.</a>
+        </form>
+        {% if messages %}
+            <div class="alert alert-danger" style="text-align: center;">
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

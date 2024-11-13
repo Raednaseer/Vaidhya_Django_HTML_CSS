@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'calculatorstyle.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="display-container">
+        <div class="result-display" id="result-display">0</div>
+    </div>
+    <div class="button-container">
+        <button class="flex-button" onclick="clearDisplay()">AC</button>
+        <button class="flex-button" onclick="deleteLast()">DEL</button>
+        <button class="flex-button" onclick="appendToDisplay('%')">%</button>
+        <button class="flex-button" onclick="appendToDisplay('/')">/</button>
+    </div>
+    <div class="button-container">
+        <button class="flex-button" onclick="appendToDisplay('7')">7</button>
+        <button class="flex-button" onclick="appendToDisplay('8')">8</button>
+        <button class="flex-button" onclick="appendToDisplay('9')">9</button>
+        <button class="flex-button" onclick="appendToDisplay('*')">*</button>
+    </div>
+    <div class="button-container">
+        <button class="flex-button" onclick="appendToDisplay('4')">4</button>
+        <button class="flex-button" onclick="appendToDisplay('5')">5</button>
+        <button class="flex-button" onclick="appendToDisplay('6')">6</button>
+        <button class="flex-button" onclick="appendToDisplay('-')">-</button>
+    </div>
+    <div class="button-container">
+        <button class="flex-button" onclick="appendToDisplay('1')">1</button>
+        <button class="flex-button" onclick="appendToDisplay('2')">2</button>
+        <button class="flex-button" onclick="appendToDisplay('3')">3</button>
+        <button class="flex-button" onclick="appendToDisplay('+')">+</button>
+    </div>
+    <div class="button-container">
+        <button class="flex-button" onclick="appendToDisplay('0')">0</button>
+        <button class="flex-button" onclick="appendToDisplay('00')">00</button>
+        <button class="flex-button" onclick="appendToDisplay('.')">.</button>
+        <button class="flex-button" onclick="calculateResult()">=</button>
+    </div>
+
+    <script>
+        let currentInput = '';
+        const resultDisplay = document.getElementById('result-display');
+
+        function appendToDisplay(value) {
+            // Prevent multiple operators
+            const lastChar = currentInput[currentInput.length - 1];
+            if (['+', '-', '*', '/', '%'].includes(value) && ['+', '-', '*', '/', '%'].includes(lastChar)) {
+                return;
+            }
+            
+            currentInput += value;
+            resultDisplay.innerText = currentInput || '0'; // Show '0' if no input
+        }
+
+        function calculateResult() {
+            if (currentInput) {
+                try {
+                    const result = eval(currentInput); // Use eval to calculate the expression
+                    currentInput = result.toString(); // Update currentInput with result
+                    resultDisplay.innerText = currentInput;
+                } catch (error) {
+                    resultDisplay.innerText = 'Error'; // Display error on invalid expression
+                    currentInput = ''; // Reset input
+                }
+            }
+        }
+
+        function clearDisplay() {
+            currentInput = '';
+            resultDisplay.innerText = '0';
+        }
+
+        function deleteLast() {
+            currentInput = currentInput.slice(0, -1); // Remove last character
+            resultDisplay.innerText = currentInput || '0'; // Show '0' if empty
+        }
+    </script>
+</body>
+</html>

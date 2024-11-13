@@ -1,0 +1,70 @@
+{% extends 'base.html' %} 
+
+{% block title %}Sign Up{% endblock %} 
+
+{% block content %}
+<style>
+    form {
+        display: flex;
+        flex-direction: column; 
+        width: 300px;
+        margin: auto; 
+    }
+
+    label {
+        margin-bottom: 5px; 
+    }
+
+    input {
+        margin-bottom: 15px;
+        padding: 8px; 
+        border: 1px solid #ccc; 
+        border-radius: 4px; 
+    }
+</style>
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Create your Account</h1>
+
+    
+    <div>
+        <form action="" method="POST" onsubmit="handleSingUp(event)">
+            {% csrf_token %}
+            <table>
+                {% for field in form %}
+                    <tr>
+                        <td>{{ field.label }}</td>
+                        <td>
+                            {{ field }} 
+                            {% if field.errors %}
+                                <div style="color: red;">
+                                    {{ field.errors|join:", " }}
+                                </div>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+            <input type="submit" value="Create Account" class="btn btn-primary custom-btn">
+            <a href="{% url 'login' %}" style="color:  #393C2D;">Already have an Account?. Click to Login</a>
+        </form>
+    </div>
+    <!--<script>
+        function handleSignUp(event) {
+            event.preventDefault(); 
+            
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value
+
+            if (!name || !email || !password) {
+                alert("Please fill in all fields.");
+                return;
+            }
+
+            alert(`Account with userid: ${email} was created`)
+        }
+    </script>-->
+    
+
+{% endblock %}
+    

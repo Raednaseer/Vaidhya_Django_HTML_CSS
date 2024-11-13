@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block title %}Welcome to Vaidhya{% endblock %}
+{% load static %}
+
+{% block content %}
+<body class='body-cstm'>
+    <div class="container text-center mt-5">
+        <h1>Welcome to Vaidhya</h1>
+        <p>Your trusted source for premium Ayurvedic products.</p>
+        <img src="{% static 'images/home-main.jpg' %}" alt="Ayurvedic Products" class="rounded-corners"/>
+
+        <h2 class="mt-5">Explore Our Categories</h2>
+        <div class="row mt-4">
+            <div class="col-md-3">
+                <div class="card mb-4">
+                    <img src="{% static 'images/herbal-supplement-main.jpg' %}" class="card-img-top" alt="Herbal Supplements">
+                    <div class="card-body custom-card-body">
+                        <h5 class="card-title">Herbal Supplements</h5>
+                        <p class="card-text">Boost your health with our natural supplements.</p>
+                        <a href="{% url 'products' %}#supplements" class="btn custom-btn">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card mb-4 custom-card">
+                    <img src="{% static 'images/essentialoil-main.jpg' %}" class="card-img-top" alt="Essential Oils">
+                    <div class="card-body custom-card-body">
+                        <h5 class="card-title">Essential Oils</h5>
+                        <p class="card-text">Discover the power of aromatherapy.</p>
+                        <a href="{% url 'products' %}#oil" class="btn custom-btn">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card mb-4 custom-card">
+                    <img src="{% static 'images/skincare-main.jpg' %}" class="card-img-top" alt="Skincare Products">
+                    <div class="card-body custom-card-body">
+                        <h5 class="card-title">Skincare Products</h5>
+                        <p class="card-text">Nourish your skin with our herbal formulations.</p>
+                        <a href="{% url 'products' %}#skincare" class="btn custom-btn">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card mb-4 custom-card">
+                    <img src="{% static 'images/tea-main.jpg' %}" class="card-img-top" alt="Teas and Infusions">
+                    <div class="card-body custom-card-body">
+                        <h5 class="card-title">Teas and Infusions</h5>
+                        <p class="card-text">Relax and rejuvenate with our herbal teas.</p>
+                        <a href="{% url 'products' %}#tea" class="btn custom-btn">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="mt-5">Why Choose Us?</h2>
+        <p>At Vaidhya, we are committed to providing authentic Ayurvedic products crafted from the finest natural ingredients. Our products are designed to support your health and wellness journey.</p>
+        
+        <div class="mt-4">
+            <a href="{% url 'about' %}" class="btn custom-btn2">Learn More About Us</a>
+        </div>
+    </div>
+</body>
+{% endblock %}
